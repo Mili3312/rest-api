@@ -1,0 +1,38 @@
+###Recuperar todas las peliculas 
+GET http://localhost:1234/movies
+
+
+###Recuperar una pelicula por id
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b1
+
+
+###Recuperar todas las peliculas según su género
+GET http://localhost:1234/movies?genre=Crime
+
+###Crear una pelicula con POST
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "La cenicienta",
+    "year": 2021,
+    "director": "John Musker",
+    "duration": 120,
+    "poster": "https://lumiere-a.akamaihd.net/v1/images/garland_instagram_dom_payoff_poster_las_30f591ca.jpeg?region=0%2C0%2C800%2C1000",
+    "genre": ["Adventure","Comedy"]
+}
+
+
+### Actualizar una pelicula
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "title": "hello World",
+    "year":1999
+}
+
+
+###Eliminar una pelicula según su id
+
+DELETE http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
