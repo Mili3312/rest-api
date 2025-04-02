@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-exports.app = app;
+
 const crypto = require('node:crypto')
 const movies = require('./movies.json');
 const { validateMovie, validatePartialMovie } = require('./schema/movie');
@@ -110,7 +110,7 @@ app.options('/movies/:id',(req,res)=>{
         res.header('Access-Control-Allow-Origin', origin)
         res.header('Access-Control-Allow-Methods', 'GET, POST,PUT, PATCH, DELETE')
     }
- res.send(200)
+ res.sendStatus(200)
 })
 
 
